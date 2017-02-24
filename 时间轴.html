@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	/*reset样式*/
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,p,blockquote,th,td,figure{margin:0;padding:0;}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block;}
+table{border-collapse:collapse;border-spacing:0;}
+caption,th{font-weight:normal;text-align:left;}
+fieldset,img{border:0;}
+ul li{list-style:none;}
+h1,h2,h3,h4,h5,h6{font-size:100%;}
+h5{font-size:18px;margin-bottom:20px;color:#666;}
+h5 span{font-size:12px;color:#ccc;font-weight:normal;}
+blockquote:before,blockquote:after,q:before,q:after{content:"";}
+html{-webkit-text-size-adjust:none;-ms-text-size-adjust:none;}
+body{font:normal 14px/24px "Helvetica Neue",Helvetica,STheiti,"Microsoft Yahei","冬青黑体简体中文 w3",宋体,Arial,Tahoma,sans-serif,serif;word-wrap:break-word;background: #F0F0F0;}
+input,button,textarea,select,option,optiongroup{font-family:inherit;font-size:inherit;}
+code,pre{font-family:"Microsoft YaHei",Consolas,"Courier New",monospace;}
+.bw0{border: none !important;}
+*:focus{outline:0;}
+legend{color:#000;}
+input,select{vertical-align:middle;}
+button{overflow:visible;}
+input.button,button{cursor:pointer;}
+button,input,select,textarea{margin:0;}
+textarea{overflow:auto;resize:none;}
+label[for],input[type="button"],input[type="submit"],input[type="reset"]{cursor:pointer;}
+input[type="button"]::-moz-focus-inner,input[type="submit"]::-moz-focus-inner,input[type="reset"]::-moz-focus-inner,button::-moz-focus-inner{border:0;padding:0;}
+a { text-decoration:none;color:#1C3D72 }
+img{-ms-interpolation-mode:bicubic;}
+/* new clearfix */
+.clearfix:after {
+visibility: hidden;
+display: block;
+font-size: 0;
+content: " ";
+clear: both;
+height: 0;
+}
+/*main样式*/
+.page{margin: 0 auto;background-color: #F0F0F0;box-shadow: 0 5px 20px #cccccc;width: 100%;}
+.box{width: 940px;margin: 18px auto 0 auto; }
+.event_year{width: 100px;border-bottom:2px solid #DDD;text-align: center;float:left;margin-top:70px;margin-left:-60px;}
+.event_year li{height:40px;line-height:40px;background:#FFF;margin-bottom:1px;font-size:18px;color:#828282;cursor:pointer;}
+.event_year li.current{width:100px;background:#0066ff url("1.png") 100px 0 no-repeat;color:#FFF;padding-left:9px; text-align: left;}
+.event_list { width:850px;float:right;background:url(小圆点.png) 139px 0 repeat-y;margin-left:50px;margin-top:70px; }
+.event_list h3 { margin:0 0 10px 132px;font-size:24px;font-family:Georgia;color:#0066ff;padding-left:25px;background:url("圆.png") 0px 7px no-repeat;height:38px;line-height:30px;font-style:italic; }
+.event_list li { background:url('圆点.png') 136px 16px no-repeat; }
+.event_list li span { width:127px;text-align:right;display:block;float:left;margin-top:10px; }
+.event_list li p { width:680px;margin-left:24px;display:inline-block;padding-left:10px;background:url('2.png') 0px 15px no-repeat;line-height:25px; }
+.event_list li p span { width:650px;text-align:left;border-bottom:2px solid #DDD;padding:10px 15px;background:#FFF;margin:0; }
+
+
+</style>
+<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>
+	$(function(){
+		$("label").click(function(){
+			$(this).parent("li").siblings().removeClass("current");
+			$(this).parent("li").addClass("current");
+			var year =$(this).text();
+			$("#" + year).parent().prevAll("div").slideUp(900);
+			$("#" + year).parent().slideDown(1800).nextAll("div").slideDown(1800);
+		})
+	})
+</script>
+</head>
+<body>
+<div class="page">
+	<div class="box">
+		<ul class="event_year">
+			<li class="current"><label for="20170111">20170111</label></li>
+			<li><label for="20170112">20170112</label></li>
+			<li><label for="20170113">20170113</label></li>
+		</ul>
+		<ul class="event_list">
+			<div>
+				<h3 id="20170111">20170111</h3>
+				<li>
+					<span>20170111&nbsp;22:32:45</span>
+					<p><span>出入口系统<a href="f?p='||V('APP_ID')||':122:'||V('SESSION')||':::::"></a></span></p>
+				</li>
+				<li>
+					<span>20170111&nbsp;21:00:31</span>
+                    <p><span>停车场系统<a href="f?p='||V('APP_ID')||':122:'||V('SESSION')||':::::"></a></span></p>
+
+				</li>
+				<li>
+                    <span>20170111&nbsp;17:30:45</span>
+                    <p><span>楼宇门禁系统<a href="f?p='||V('APP_ID')||':122:'||V('SESSION')||':::::"></a></span></p>
+                 </li>
+
+			</div>
+
+
+               <div>
+                    <h3 id="20170112">20170112</h3>
+                    <li>
+                        <span>20170112&nbsp;14:03:41</span>
+                        <p><span>视频监控系统<a href="f?p='||V('APP_ID')||':122:'||V('SESSION')||':::::"></a></span></p>
+                    </li>
+                    <li>
+                        <span>20170112&nbsp;11:24:47</span>
+                        <p><span>电子巡更系统<a href="f?p='||V('APP_ID')||':122:'||V('SESSION')||':::::"></a></span></p>
+                    </li>
+                </div>
+                <div>
+                    <h3 id="20170113">20170113</h3>
+                    <li><span>20170112 14:03:41</span><p><span>视频监控系统<a href="f?p='||V('APP_ID')||':122:'||V('SESSION')||':::::"></a></span></p></li>
+                    <li><span>20170112 14:03:41</span><p><span>视频监控系统<a href="f?p='||V('APP_ID')||':122:'||V('SESSION')||':::::"></a></span></p></li>
+                </div>
+		</ul>
+		<div class="clearfix"></div>
+
+	</div>
+</div>	
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
